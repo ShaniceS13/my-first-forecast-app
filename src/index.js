@@ -22,6 +22,12 @@ function refreshWeather(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon"/>`;
 
+  let monthElement = document.querySelector("#current-month-date");
+  monthElement.innerHTML = formatMonthDate(date);
+
+  let yearElement = document.querySelector("#current-year");
+  yearElement.innerHTML = formatYear(date);
+
   getForecast(response.data.city);
 }
 
@@ -45,6 +51,34 @@ function formatDate(date) {
   }
 
   return `${day} ${hours}:${minutes}`;
+}
+
+function formatMonthDate(date) {
+  console.log(date);
+  let month = date.getMonth();
+  let currentDate = date.getDate();
+  let months = [
+    "Jan",
+    "Feb",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  let monthly = months[date.getMonth()];
+  return `${monthly} ${currentDate}`;
+}
+
+function formatYear(date) {
+  let year = date.getFullYear();
+  return `${year}`;
 }
 
 function searchCity(city) {

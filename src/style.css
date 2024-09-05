@@ -1,6 +1,6 @@
 body {
   background-color: #eaf6f6;
-  font-family: "Roboto", sans-serif;
+  font-family: "Wittgenstein";
 }
 
 a {
@@ -46,6 +46,7 @@ main {
 .weather-app-data {
   display: flex;
   justify-content: space-between;
+  color: #33778c;
 }
 
 .weather-app-city {
@@ -57,8 +58,14 @@ main {
 .weather-app-details {
   font-size: 16px;
   line-height: 20px;
-
   color: rgba(39, 33, 66, 0.4);
+}
+
+#weather-app-month-year {
+  font-size: 16px;
+  line-height: 20px;
+  color: #f65282;
+  font-weight: bold;
 }
 
 .weather-app-details strong {
